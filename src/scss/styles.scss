@@ -1,0 +1,15 @@
+// Импорты
+@use "variables" as *;
+@use "layout";
+@use "animations";
+
+// Компоненты
+@use "components/header";
+@use "components/buttons";
+@use "components/footer";
+
+// Страницы
+@use "pages/home";
+@use "pages/about";
+@use "pages/portfolio";
+@use "pages/contact";

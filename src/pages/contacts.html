@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Контакты - Тестовый сайт</title>
+    <link rel="stylesheet" href="../scss/styles.scss" />
+  </head>
+  <body>
+    <include src="../components/header.html"></include>
+
+    <main class="container">
+      <h1>Свяжитесь с нами</h1>
+
+      <div class="contacts-content">
+        <div class="contact-info">
+          <h2>Наши контакты</h2>
+
+          <div class="contact-item">
+            <strong>📧 Email:</strong>
+            <p>info@example.com</p>
+          </div>
+
+          <div class="contact-item">
+            <strong>📞 Телефон:</strong>
+            <p>+7 (999) 123-45-67</p>
+          </div>
+
+          <div class="contact-item">
+            <strong>📍 Адрес:</strong>
+            <p>г. Москва, ул. Примерная, д. 123</p>
+          </div>
+
+          <div class="contact-item">
+            <strong>🕒 Время работы:</strong>
+            <p>Пн-Пт: 9:00 - 18:00</p>
+          </div>
+
+          <div class="office-images">
+            <picture>
+              <source
+                type="image/avif"
+                srcset="
+                  /img/2-mobile.avif   600w,
+                  /img/2-tablet.avif  1000w,
+                  /img/2-desktop.avif 1600w
+                "
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 80vw, 1200px"
+              />
+              <source
+                type="image/webp"
+                srcset="
+                  /img/2-mobile.webp   600w,
+                  /img/2-tablet.webp  1000w,
+                  /img/2-desktop.webp 1600w
+                "
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 80vw, 1200px"
+              />
+              <img src="/img/2-desktop.jpg" alt="Наш офис" loading="lazy" />
+            </picture>
+            <picture>
+              <source
+                type="image/avif"
+                srcset="
+                  /img/4-mobile.avif   600w,
+                  /img/4-tablet.avif  1000w,
+                  /img/4-desktop.avif 1600w
+                "
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 80vw, 1200px"
+              />
+              <source
+                type="image/webp"
+                srcset="
+                  /img/4-mobile.webp   600w,
+                  /img/4-tablet.webp  1000w,
+                  /img/4-desktop.webp 1600w
+                "
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 80vw, 1200px"
+              />
+              <img
+                src="/img/4-desktop.jpg"
+                alt="Рабочее пространство"
+                loading="lazy"
+              />
+            </picture>
+          </div>
+        </div>
+
+        <div class="contact-form">
+          <h2>Напишите нам</h2>
+          <form class="form">
+            <div class="form-group">
+              <label for="name">Имя:</label>
+              <input type="text" id="name" name="name" required />
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+
+            <div class="form-group">
+              <label for="message">Сообщение:</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                required
+              ></textarea>
+            </div>
+
+            <button type="submit" class="btn btn--primary">
+              Отправить сообщение
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <div class="map-section">
+        <h2>Мы на карте</h2>
+        <div class="map-placeholder">
+          <picture>
+            <source
+              type="image/avif"
+              srcset="
+                /img/5-mobile.avif   600w,
+                /img/5-tablet.avif  1000w,
+                /img/5-desktop.avif 1600w
+              "
+              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 80vw, 1200px"
+            />
+            <source
+              type="image/webp"
+              srcset="
+                /img/5-mobile.webp   600w,
+                /img/5-tablet.webp  1000w,
+                /img/5-desktop.webp 1600w
+              "
+              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 80vw, 1200px"
+            />
+            <img
+              src="/img/5-desktop.jpg"
+              alt="Карта расположения"
+              loading="lazy"
+            />
+          </picture>
+          <p>📍 Карта нашего расположения</p>
+        </div>
+      </div>
+    </main>
+
+    <include src="../components/footer.html"></include>
+    <script type="module" src="../js/contacts.js"></script>
+  </body>
+</html>

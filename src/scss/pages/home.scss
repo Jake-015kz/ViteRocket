@@ -1,0 +1,83 @@
+@use "../variables" as *; // Стили для галереи изображений
+.images {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    }
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+
+    img {
+      height: 250px;
+    }
+  }
+}
+
+.test-image-set {
+  /* Фолбэк для старых браузеров */
+  /* Фолбэк для старых браузеров */
+              background-image: url('../img/tehnologia-sinii-fon-oboi-desktop.jpg');
+
+              /* Современные браузеры с image-set и ретиной */
+              background-image: -webkit-image-set(
+                url('../img/tehnologia-sinii-fon-oboi-desktop.avif') 1x,
+                url('../img/tehnologia-sinii-fon-oboi-retina.avif') 2x,
+                url('../img/tehnologia-sinii-fon-oboi-desktop.webp') 1x,
+                url('../img/tehnologia-sinii-fon-oboi-retina.webp') 2x
+              );
+
+              background-image: image-set(
+                url('../img/tehnologia-sinii-fon-oboi-desktop.avif') 1x,
+                url('../img/tehnologia-sinii-fon-oboi-retina.avif') 2x,
+                url('../img/tehnologia-sinii-fon-oboi-desktop.webp') 1x,
+                url('../img/tehnologia-sinii-fon-oboi-retina.webp') 2x
+              );
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  max-width: 800px;
+  margin: 20px auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+.hero__description {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: $text-primary;
+  font-size: 1.5rem;
+
+  @media (max-width: 768px) {
+    font-size: 1.3rem;
+  }
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: $text-primary;
+  font-size: 3rem;
+
+  @media (max-width: 768px) {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+}

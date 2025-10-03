@@ -1,0 +1,12 @@
+@mixin background-image-set($image-path) {
+  $base-name: str-slice($image-path, 1, str-index($image-path, ".") - 1);
+  $extension: str-slice($image-path, str-index($image-path, ".") + 1);
+
+  background-image: image-set(
+    url("#{$base-name}@1x.avif") type("image/avif") 1x,
+    url("#{$base-name}@2x.avif") type("image/avif") 2x,
+    url("#{$base-name}@1x.webp") type("image/webp") 1x,
+    url("#{$base-name}@2x.webp") type("image/webp") 2x,
+    url("#{$base-name}@1x.#{$extension}") 1x
+  );
+}

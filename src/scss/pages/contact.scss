@@ -1,0 +1,109 @@
+// Стили для страницы "Контакты"
+.contacts-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.contact-info {
+  .contact-item {
+    margin-bottom: 1.5rem;
+
+    strong {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: #2c3e50;
+    }
+
+    p {
+      color: #666;
+      margin: 0;
+    }
+  }
+
+  .office-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 2rem;
+
+    img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+  }
+}
+
+.contact-form {
+  .form {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .form-group {
+    margin-bottom: 1.5rem;
+
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+      color: #2c3e50;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 0.75rem;
+      border: 2px solid #e9ecef;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: border-color 0.3s ease;
+
+      &:focus {
+        outline: none;
+        border-color: #3498db;
+      }
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+  }
+}
+
+.map-section {
+  .map-placeholder {
+    text-align: center;
+
+    img {
+      width: 100%;
+      max-width: 600px;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      color: #666;
+      font-size: 1.1rem;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .about-content,
+  .contacts-content {
+    grid-template-columns: 1fr;
+  }
+
+  .office-images {
+    grid-template-columns: 1fr !important;
+  }
+}

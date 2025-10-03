@@ -1,0 +1,150 @@
+@use "../variables" as *;
+
+.header {
+  background: $header-bg;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid $header-border;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  transition: all 0.3s ease;
+
+  &__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+
+    @media (max-width: 768px) {
+      padding: 1rem;
+    }
+  }
+
+  // Логотип
+  &__logo {
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: $text-primary;
+      text-decoration: none;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: $text-hover;
+      }
+    }
+  }
+
+  // Навигация
+  &__nav {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+
+    @media (max-width: 768px) {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: white;
+      flex-direction: column;
+      padding: 1rem;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      border-top: 1px solid rgba(0, 0, 0, 0.1);
+
+      &.active {
+        display: flex;
+      }
+    }
+  }
+
+  // Действия
+  &__actions {
+    display: flex;
+    gap: 1rem;
+
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  // Бургер меню
+  &__burger {
+    display: none;
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    gap: 4px;
+
+    @media (max-width: 768px) {
+      display: flex;
+    }
+
+    span {
+      width: 30px;
+      height: 3px;
+      background: $text-primary;
+      transition: all 0.3s ease;
+      border-radius: 2px;
+    }
+
+    &.active {
+      span:nth-child(1) {
+        transform: rotate(45deg) translate(4px, 4px);
+      }
+
+      span:nth-child(2) {
+        opacity: 0;
+      }
+
+      span:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
+      }
+    }
+  }
+}
+
+// Ссылки навигации
+.nav__link {
+  color: $text-primary;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  position: relative;
+
+  &:hover {
+    color: $text-hover;
+    background: rgba(52, 152, 219, 0.1);
+  }
+
+  &.active {
+    color: $text-hover;
+    background: rgba(52, 152, 219, 0.1);
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -2px;
+      left: 1rem;
+      right: 1rem;
+      height: 2px;
+      background: $text-hover;
+      border-radius: 2px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+  }
+}
